@@ -9,7 +9,7 @@ function setConnected(connected) {
     else {
         $("#conversation").hide();
     }
-    $("#greetings").html("");
+    $("#messages").html("");
 }
 
 function connect() {
@@ -38,20 +38,19 @@ function disconnect() {
 
 function sendName() {
     // If you would have some payload to send
-    // var content = JSON.stringify({'name': $("#name").val()});
-    var content = $("#name").val();
+    // var content = JSON.stringify({'name': $("#input-text").val()});
+    var content = $("#input-text").val();
     console.log("Send: " + content);
     stompClient.send("/stream/input", {}, content);
+    $("#input-text").val("");
 }
 
 function showGreeting(message) {
-    $("#greetings").append("<tr><td>" + message + "</td></tr>");
+    $("#messages").append("<tr><td>" + message + "</td></tr>");
 }
 
 $(function () {
-    $("form").on('submit', function (e) {
-        e.preventDefault();
-    });
+    $("form").on('submit', function (e) { e.preventDefault(); });
     $( "#connect" ).click(function() { connect(); });
     $( "#disconnect" ).click(function() { disconnect(); });
     $( "#send" ).click(function() { sendName(); });
