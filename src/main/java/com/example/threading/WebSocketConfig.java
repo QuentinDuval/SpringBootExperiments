@@ -10,6 +10,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     // https://spring.io/guides/gs/messaging-stomp-websocket/
+    // https://www.toptal.com/java/stomp-spring-boot-websocket
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
@@ -19,6 +20,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
+        registry.addEndpoint("/gs-guide-websocket");
         registry.addEndpoint("/gs-guide-websocket").withSockJS();
     }
 }
