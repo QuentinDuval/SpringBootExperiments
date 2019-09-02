@@ -33,7 +33,7 @@ public class ApplicationTest {
 	@Autowired
 	private TestRestTemplate restTemplate;
 
-	private static final int REQUEST_COUNT = 100;
+	private static final int REQUEST_COUNT = 50;
 	private static final int WAITING_TIME = 1000;
 
 	@Test

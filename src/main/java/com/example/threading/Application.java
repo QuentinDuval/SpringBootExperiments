@@ -6,9 +6,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 
 
-// TODO - try Kotlin
-// 	https://content.pivotal.io/springone-platform-2017/why-spring-loves-kotlin-s%C3%A9bastien-deleuze
-
 @EnableAsync
 @SpringBootApplication
 public class Application {
